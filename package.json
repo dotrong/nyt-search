@@ -4,21 +4,25 @@
   "description": "",
   "main": "public/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack & node server",
-    "start": "node server",
-    "build": "webpack"
+    "test": "jest",
+    "build": "webpack -w"
   },
   "author": "Ahmed Haque",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.12.0",
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "mongoose": "^4.5.1",
-    "morgan": "^1.7.0",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "axios": "^0.18.0",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "body-parser": "^1.18.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "express": "^4.16.3",
+    "jest": "^22.4.3",
+    "mongoose": "^5.0.14",
+    "morgan": "^1.9.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.3.13",
