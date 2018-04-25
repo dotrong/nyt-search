@@ -1,5 +1,5 @@
 {
-  "name": "react-example",
+  "name": "nyt-search",
   "version": "1.0.0",
   "description": "",
   "main": "public/index.html",
@@ -7,7 +7,7 @@
     "test": "jest",
     "build": "webpack -w"
   },
-  "author": "Ahmed Haque",
+  "author": "Trong H DO",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
