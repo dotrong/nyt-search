@@ -62,12 +62,13 @@ app.get("/api/articles", function(req, res) {
 // This is the route we will send POST requests to save each search.
 app.post("/api/article", function(req, res) {
   // Here we'll save the article based on the JSON input.
-  Article.create({
+  //Article.create({
+    Article.findOneAndUpdate({article_id:req.body.article_id},{
     title: req.body.title,
     date: req.body.date,
     url: req.body.url,
     article_id: req.body.article_id
-  }, function(err) {
+  },{upsert: true}, function(err) {
     if (err) {
       console.log(err);
     }
