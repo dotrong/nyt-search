@@ -24,7 +24,16 @@ app.use(express.static("public"));
 // -------------------------------------------------
 
 // MongoDB URI
-mongoose.connect("mongodb://localhost/nytime");
+const databaseURI = "mongodb://localhost/nytime";
+
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+}
+else {
+  mongoose.connect(databaseURI);
+}
+
 var db = mongoose.connection;
 
 db.on("error", function(err) {
