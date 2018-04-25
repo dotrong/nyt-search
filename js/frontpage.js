@@ -16,7 +16,7 @@ class FrontPage extends React.Component {
             'searchTopic':'',
             'startYear':'',
             'endYear':'',
-            'results':[],
+            'results':{status: true, data: []},
             'articles':[]
 
         }
@@ -74,7 +74,7 @@ class FrontPage extends React.Component {
     handleSaveClick(event) {
         event.preventDefault();
         const index = event.target.id;
-        let results = this.state.results;
+        let results = this.state.results.data;
         let articles = [];
 
         const removeItem = results.splice(index,1);
@@ -88,7 +88,7 @@ class FrontPage extends React.Component {
                 articles.push(article);
             });
 
-            this.setState({results:results, articles:articles});
+            this.setState({results:{status:true,data: results}, articles:articles});
         }.bind(this));
      
     }
@@ -141,9 +141,14 @@ class FrontPage extends React.Component {
                         i++; //limit to 5 articles
                     }
                 });
-
-                this.setState({'results': row});
-        }.bind(this));
+                
+                if (row.length>0){
+                    this.setState({'results': {status: true, data: row}});
+                } 
+                else {
+                    this.setState({'results': {status: false, data: []}});
+                }
+        }.bind(this))
 
     }
 

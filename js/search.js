@@ -5,7 +5,7 @@ class Search extends React.Component {
 
     render() {
         //Validate user input
-        const validYear = new RegExp(/\d{8}/);
+        const validYear = new RegExp(/^\d{8}$/);
         
         const buttonDisabled = this.props.searchTopic.length == 0 || !validYear.test(this.props.startYear) || !validYear.test(this.props.endYear);
 
